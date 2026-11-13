@@ -33,7 +33,7 @@ jobs:
       - name: Build theme package
         run: |
           mkdir brightsmile-theme
-          rsync -a --exclude=brightsmile-theme --exclude=.git --exclude=.github --exclude=vendor --exclude=composer.json --exclude=composer.lock ./ brightsmile-theme/.gitignore --exclude=CONTRIBUTING.md
+          rsync -a --exclude=brightsmile-theme --exclude=.git --exclude=.github --exclude=vendor --exclude=composer.json --exclude=composer.lock --exclude=.gitignore --exclude=CONTRIBUTING.md ./ brightsmile-theme/
           zip -r brightsmile-theme.zip brightsmile-theme
 
       - name: Save package
