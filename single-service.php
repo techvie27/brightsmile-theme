@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Single Service template.
