@@ -4,3 +4,910 @@ Author: Amit Shukla
 Description: Custom theme built from scratch.
 Version: 1.0.0
 */
+
+/* =========================================
+   1. GLOBAL STYLES
+========================================= */
+
+:root {
+	--bs-primary: #0d9488;
+	--bs-primary-dark: #0f766e;
+	--bs-primary-light: #ccfbf1;
+	--bs-navy: #153044;
+	--bs-text: #526575;
+	--bs-heading: #183447;
+	--bs-background: #f5faf9;
+	--bs-white: #ffffff;
+	--bs-border: #e2eceb;
+	--bs-shadow: 0 12px 35px rgba(21, 48, 68, 0.08);
+	--bs-radius: 16px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	font-family: "Inter", "Segoe UI", Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.7;
+	color: var(--bs-text);
+	background: var(--bs-background);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+a {
+	color: var(--bs-primary);
+	text-decoration: none;
+	transition: all 0.25s ease;
+}
+
+a:hover {
+	color: var(--bs-primary-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--bs-heading);
+	line-height: 1.25;
+	font-weight: 700;
+	margin-top: 0;
+}
+
+h1 {
+	font-size: clamp(36px, 5vw, 56px);
+	letter-spacing: -1.5px;
+}
+
+h2 {
+	font-size: clamp(26px, 3vw, 36px);
+}
+
+p {
+	margin-top: 0;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+/* =========================================
+   2. HEADER & NAVIGATION
+========================================= */
+
+body > header,
+body header {
+	position: relative;
+	z-index: 10;
+	background: var(--bs-white);
+	border-bottom: 1px solid var(--bs-border);
+}
+
+header {
+	padding: 18px 6%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30px;
+}
+
+header a {
+	color: var(--bs-navy);
+	font-weight: 700;
+}
+
+header > a {
+	font-size: 24px;
+	letter-spacing: -0.7px;
+}
+
+header nav ul {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+header nav li {
+	margin: 0;
+}
+
+header nav a {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+header nav a:hover,
+header nav .current-menu-item > a {
+	color: var(--bs-primary);
+}
+
+/* =========================================
+   3. MAIN CONTENT
+========================================= */
+
+main {
+	width: min(1180px, 88%);
+	margin: 0 auto;
+	padding: 75px 0;
+	min-height: 65vh;
+}
+
+main > h1 {
+	margin-bottom: 35px;
+}
+
+main > p {
+	max-width: 750px;
+}
+
+/* =========================================
+   4. HOMEPAGE
+========================================= */
+
+.home main,
+.front-page main {
+	padding-top: 110px;
+	padding-bottom: 110px;
+}
+
+.home main > h1,
+.front-page main > h1 {
+	max-width: 800px;
+	font-size: clamp(42px, 6vw, 68px);
+	margin-bottom: 25px;
+}
+
+.home main > p,
+.front-page main > p {
+	max-width: 650px;
+	font-size: 19px;
+	line-height: 1.8;
+}
+
+.home main a,
+.front-page main a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 18px;
+	padding: 14px 28px;
+	background: var(--bs-primary);
+	color: var(--bs-white);
+	border-radius: 8px;
+	font-weight: 700;
+	box-shadow: 0 8px 20px rgba(13, 148, 136, 0.2);
+}
+
+.home main a:hover,
+.front-page main a:hover {
+	background: var(--bs-primary-dark);
+	transform: translateY(-2px);
+}
+
+/* =========================================
+   5. DOCTORS PAGE
+========================================= */
+
+.page main article {
+	display: grid;
+	grid-template-columns: 180px 1fr;
+	gap: 8px 30px;
+	align-items: start;
+	margin-bottom: 28px;
+	padding: 30px;
+	background: var(--bs-white);
+	border: 1px solid var(--bs-border);
+	border-radius: var(--bs-radius);
+	box-shadow: var(--bs-shadow);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.page main article:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 18px 40px rgba(21, 48, 68, 0.12);
+}
+
+.page main article img {
+	grid-row: span 4;
+	width: 180px;
+	height: 190px;
+	object-fit: cover;
+	border-radius: 12px;
+	background: var(--bs-primary-light);
+}
+
+.page main article h2 {
+	margin-bottom: 8px;
+	font-size: 24px;
+}
+
+.page main article .doctor-bio {
+	margin-bottom: 12px;
+}
+
+.page main article p {
+	margin-bottom: 8px;
+}
+
+.page main article p:last-child {
+	margin-bottom: 0;
+}
+
+/* =========================================
+   6. TREATMENTS ARCHIVE
+========================================= */
+
+.post-type-archive-service main,
+.archive main {
+	padding-top: 75px;
+}
+
+.post-type-archive-service main > h1 {
+	margin-bottom: 40px;
+}
+
+.post-type-archive-service main h2 {
+	display: inline-block;
+	font-size: 22px;
+	margin: 0 0 12px;
+}
+
+.post-type-archive-service main h2 a {
+	color: var(--bs-heading);
+}
+
+.post-type-archive-service main h2 a:hover {
+	color: var(--bs-primary);
+}
+
+.post-type-archive-service main > h2 {
+	width: calc(33.333% - 22px);
+	display: inline-block;
+	vertical-align: top;
+	padding: 28px;
+	margin: 0 20px 20px 0;
+	background: var(--bs-white);
+	border: 1px solid var(--bs-border);
+	border-radius: var(--bs-radius);
+	box-shadow: var(--bs-shadow);
+}
+
+.post-type-archive-service main > h2:hover {
+	transform: translateY(-4px);
+	border-color: var(--bs-primary);
+}
+
+/* Treatment price */
+
+.post-type-archive-service main > p {
+	display: inline-block;
+	width: calc(33.333% - 22px);
+	margin: -20px 20px 20px 0;
+	padding: 0 28px 24px;
+	background: var(--bs-white);
+	color: var(--bs-primary-dark);
+	font-weight: 700;
+}
+
+/* =========================================
+   7. SINGLE TREATMENT PAGE
+========================================= */
+
+.single-service main {
+	max-width: 900px;
+	padding-top: 90px;
+}
+
+.single-service main > h1 {
+	margin-bottom: 25px;
+}
+
+.single-service main > p {
+	font-size: 19px;
+	margin-bottom: 25px;
+}
+
+.single-service main > a {
+	display: inline-flex;
+	padding: 13px 24px;
+	margin-top: 20px;
+	background: var(--bs-primary);
+	color: var(--bs-white);
+	border-radius: 8px;
+	font-weight: 700;
+}
+
+.single-service main > a:hover {
+	background: var(--bs-primary-dark);
+}
+
+/* =========================================
+   8. APPOINTMENT FORM
+========================================= */
+
+.page main form {
+	max-width: 650px;
+	padding: 40px;
+	background: var(--bs-white);
+	border: 1px solid var(--bs-border);
+	border-radius: var(--bs-radius);
+	box-shadow: var(--bs-shadow);
+}
+
+.page main form p {
+	margin-bottom: 22px;
+}
+
+.page main form label {
+	display: block;
+	margin-bottom: 8px;
+	color: var(--bs-heading);
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.page main form input,
+.page main form select,
+.page main form textarea {
+	width: 100%;
+	padding: 14px 16px;
+	color: var(--bs-heading);
+	background: #fbfdfd;
+	border: 1px solid var(--bs-border);
+	border-radius: 8px;
+	outline: none;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page main form input:focus,
+.page main form select:focus,
+.page main form textarea:focus {
+	border-color: var(--bs-primary);
+	box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1);
+}
+
+.page main form button {
+	width: 100%;
+	padding: 15px 24px;
+	color: var(--bs-white);
+	background: var(--bs-primary);
+	border: 0;
+	border-radius: 8px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: all 0.25s ease;
+}
+
+.page main form button:hover {
+	background: var(--bs-primary-dark);
+	transform: translateY(-2px);
+}
+
+/* Form validation messages */
+
+.page main > ul {
+	max-width: 650px;
+	padding: 18px 25px 18px 42px;
+	margin-bottom: 25px;
+	color: #b42318;
+	background: #fff1f0;
+	border: 1px solid #fecdca;
+	border-radius: 10px;
+}
+
+.page main > ul li {
+	margin: 5px 0;
+}
+
+/* =========================================
+   9. DENTAL TIP BOX
+========================================= */
+
+.brightsmile-tip {
+	margin: 35px 0;
+	padding: 28px 32px;
+	background: var(--bs-primary-light);
+	border-left: 5px solid var(--bs-primary);
+	border-radius: 12px;
+}
+
+.brightsmile-tip h3 {
+	margin-bottom: 10px;
+	color: var(--bs-primary-dark);
+	font-size: 22px;
+}
+
+.brightsmile-tip p {
+	margin-bottom: 0;
+	color: var(--bs-navy);
+}
+
+/* =========================================
+   10. FOOTER
+========================================= */
+
+footer {
+	padding: 28px 6%;
+	text-align: center;
+	color: #d8e7e8;
+	background: var(--bs-navy);
+	font-size: 14px;
+}
+
+footer p {
+	margin: 0;
+}
+
+/* =========================================
+   11. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+	.post-type-archive-service main > h2,
+	.post-type-archive-service main > p {
+		width: calc(50% - 16px);
+		margin-right: 12px;
+	}
+
+	.page main article {
+		grid-template-columns: 140px 1fr;
+		gap: 8px 20px;
+	}
+
+	.page main article img {
+		width: 140px;
+		height: 160px;
+	}
+}
+
+@media (max-width: 600px) {
+	header {
+		padding: 18px 5%;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	header nav {
+		width: 100%;
+	}
+
+	header nav ul {
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 12px 20px;
+	}
+
+	header nav a {
+		font-size: 14px;
+	}
+
+	main {
+		width: 90%;
+		padding: 50px 0;
+	}
+
+	.home main,
+	.front-page main {
+		padding-top: 65px;
+		padding-bottom: 65px;
+	}
+
+	.home main > h1,
+	.front-page main > h1 {
+		font-size: 42px;
+	}
+
+	.home main > p,
+	.front-page main > p {
+		font-size: 17px;
+	}
+
+	.page main article {
+		display: block;
+		padding: 22px;
+	}
+
+	.page main article img {
+		width: 100%;
+		height: 230px;
+		margin-bottom: 22px;
+	}
+
+	.post-type-archive-service main > h2,
+	.post-type-archive-service main > p {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.post-type-archive-service main > h2 {
+		margin-bottom: 0;
+	}
+
+	.post-type-archive-service main > p {
+		margin-bottom: 20px;
+		padding-bottom: 24px;
+	}
+
+	.page main form {
+		padding: 24px 20px;
+	}
+
+	.single-service main {
+		padding-top: 55px;
+	}
+}
+
+/* =========================================
+   BRIGHTSMILE - TREATMENTS CARD LAYOUT
+========================================= */
+
+.post-type-archive-service main {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 25px;
+	align-items: stretch;
+}
+
+.post-type-archive-service main > h1 {
+	grid-column: 1 / -1;
+	margin-bottom: 15px;
+}
+
+.post-type-archive-service main article {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	min-width: 0;
+	padding: 30px;
+	margin: 0;
+	background: #ffffff;
+	border: 1px solid #e2eceb;
+	border-radius: 16px;
+	box-shadow: 0 10px 30px rgba(21, 48, 68, 0.06);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.post-type-archive-service main article:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 18px 40px rgba(21, 48, 68, 0.12);
+	border-color: #0d9488;
+}
+
+.post-type-archive-service main article h2 {
+	margin: 0 0 18px;
+	font-size: 23px;
+}
+
+.post-type-archive-service main article h2 a {
+	color: #183447;
+}
+
+.post-type-archive-service main article h2 a:hover {
+	color: #0d9488;
+}
+
+.post-type-archive-service main article p {
+	width: auto;
+	margin: auto 0 0;
+	padding: 10px 16px;
+	background: #ccfbf1;
+	color: #0f766e;
+	border-radius: 8px;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+/* =========================================
+   BRIGHTSMILE - APPOINTMENT PAGE
+========================================= */
+
+.page main:has(form) {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: min(100% - 40px, 850px);
+	padding: 55px 50px;
+	margin: 65px auto;
+	background: #ffffff;
+	border: 1px solid #e2eceb;
+	border-radius: 18px;
+	box-shadow: 0 15px 45px rgba(21, 48, 68, 0.07);
+}
+
+.page main:has(form) > h1 {
+	width: 100%;
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: clamp(34px, 5vw, 48px);
+}
+
+.page main:has(form) form {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 35px;
+	background: #ffffff;
+	border: 1px solid #e2eceb;
+	border-radius: 14px;
+	box-shadow: 0 8px 25px rgba(21, 48, 68, 0.05);
+}
+
+.page main:has(form) > ul {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto 25px;
+}
+
+/* Appointment form fields */
+
+.page main:has(form) form p {
+	margin-bottom: 22px;
+}
+
+.page main:has(form) form label {
+	display: block;
+	margin-bottom: 9px;
+	color: #183447;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.page main:has(form) form input,
+.page main:has(form) form select {
+	width: 100%;
+	min-height: 54px;
+	padding: 14px 16px;
+	background: #f8fbfb;
+	border: 1px solid #dce8e7;
+	border-radius: 9px;
+	font-size: 15px;
+}
+
+.page main:has(form) form input:focus,
+.page main:has(form) form select:focus {
+	outline: none;
+	border-color: #0d9488;
+	box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1);
+}
+
+.page main:has(form) form button {
+	width: 100%;
+	min-height: 56px;
+	margin-top: 5px;
+	background: #0d9488;
+	border: none;
+	border-radius: 9px;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.page main:has(form) form button:hover {
+	background: #0f766e;
+	transform: translateY(-2px);
+}
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 900px) {
+	.post-type-archive-service main {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 20px;
+	}
+
+	.post-type-archive-service main article {
+		padding: 25px;
+	}
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+	.post-type-archive-service main {
+		grid-template-columns: 1fr;
+		gap: 18px;
+		padding-top: 45px;
+		padding-bottom: 45px;
+	}
+
+	.post-type-archive-service main > h1 {
+		font-size: 36px;
+		margin-bottom: 10px;
+	}
+
+	.post-type-archive-service main article {
+		width: 100%;
+		padding: 24px;
+	}
+
+	.post-type-archive-service main article h2 {
+		font-size: 21px;
+	}
+
+	.page main:has(form) {
+		width: 92%;
+		margin: 30px auto;
+		padding: 35px 18px;
+		border-radius: 14px;
+	}
+
+	.page main:has(form) > h1 {
+		font-size: 34px;
+		margin-bottom: 25px;
+	}
+
+	.page main:has(form) form {
+		padding: 22px 17px;
+	}
+
+	.page main:has(form) form input,
+	.page main:has(form) form select {
+		min-height: 50px;
+	}
+
+	header {
+		padding: 18px 15px;
+	}
+
+	header nav ul {
+		gap: 12px 18px;
+	}
+
+	header nav a {
+		font-size: 13px;
+	}
+}
+
+/* =========================================
+   FIX: APPOINTMENT PAGE LAYOUT
+========================================= */
+
+/* Main appointment container */
+.page main:has(form) {
+	display: block;
+	width: min(90%, 850px);
+	max-width: 850px;
+	margin: 65px auto;
+	padding: 55px 40px;
+	background: #ffffff;
+	border: 1px solid #e2eceb;
+	border-radius: 18px;
+	box-shadow: 0 15px 45px rgba(21, 48, 68, 0.07);
+}
+
+/* Override the global page article grid */
+.page main:has(form) > article {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+	transform: none;
+}
+
+/* Appointment heading */
+.page main:has(form) > article > h1 {
+	width: 100%;
+	margin: 0 0 35px;
+	text-align: center;
+	font-size: clamp(34px, 5vw, 48px);
+	line-height: 1.2;
+}
+
+/* Appointment form */
+.page main:has(form) form {
+	display: block;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 35px;
+	background: #ffffff;
+	border: 1px solid #e2eceb;
+	border-radius: 14px;
+	box-shadow: 0 8px 25px rgba(21, 48, 68, 0.05);
+}
+
+/* Form fields */
+.page main:has(form) form p {
+	display: block;
+	width: 100%;
+	margin: 0 0 22px;
+	padding: 0;
+}
+
+.page main:has(form) form label {
+	display: block;
+	margin-bottom: 9px;
+	font-weight: 700;
+	color: #183447;
+}
+
+.page main:has(form) form input,
+.page main:has(form) form select {
+	display: block;
+	width: 100%;
+	min-height: 54px;
+	padding: 14px 16px;
+	background: #f8fbfb;
+	border: 1px solid #dce8e7;
+	border-radius: 9px;
+}
+
+.page main:has(form) form button {
+	display: block;
+	width: 100%;
+	min-height: 56px;
+	margin-top: 5px;
+	background: #0d9488;
+	color: #ffffff;
+	border: none;
+	border-radius: 9px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.page main:has(form) form button:hover {
+	background: #0f766e;
+}
+
+/* Error messages */
+.page main:has(form) > ul {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto 25px;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+	.page main:has(form) {
+		width: 92%;
+		margin: 30px auto;
+		padding: 30px 16px;
+	}
+
+	.page main:has(form) > article > h1 {
+		font-size: 34px;
+		margin-bottom: 25px;
+	}
+
+	.page main:has(form) form {
+		padding: 22px 16px;
+	}
+
+	.page main:has(form) form input,
+	.page main:has(form) form select {
+		min-height: 50px;
+	}
+}
